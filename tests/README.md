@@ -11,20 +11,17 @@ bats/install.sh /usr/local
 IMAGE=tklx/mariadb bats --tap tests/basics.bats
 
 init: running tklx/mariadb
-init: waiting for tklx/mariadb to accept connections...
-1..13
-ok 1 db.test is empty
-ok 2 db.test create entry and verify
-ok 3 db.test overwrite entry and verify
-ok 4 db.test find key and verify value
-ok 5 db.test2 is empty
-ok 6 db.test2 create entry and verify
-ok 7 db.test count verify
-ok 8 db.test2 drop and verify
-ok 9 db.test count verify
-ok 10 db.test count verify
-ok 11 db.test count verify
-ok 12 nonexistent database
-ok 13 drop database and verify
+init: waiting for tklx/mariadb to accept connections.......
+1..10
+ok 1 create table
+ok 2 new table is empty
+ok 3 test insert
+ok 4 count after insert is 1
+ok 5 test insert 2
+ok 6 count after insert 2 is 2
+ok 7 test conditional delete
+ok 8 count after delete is 1
+ok 9 test select
+ok 10 test drop table
 ```
 
